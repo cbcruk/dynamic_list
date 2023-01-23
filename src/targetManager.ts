@@ -8,11 +8,12 @@ import {
 } from './constants'
 import { TargetKey, MaybeHTMLElement } from './types'
 
-class TargetManager {
+export class TargetManager {
   map = new Map<TargetKey, MaybeHTMLElement>([
     [TARGET_KEYS_HOVER, null],
     [TARGET_KEYS_PREV, null],
     [TARGET_KEYS_NEXT, null],
+    [TARGET_KEYS_SELECTED, null],
   ])
 
   setTarget = (...params: Parameters<typeof this.map.set>) => {
@@ -60,5 +61,3 @@ class TargetManager {
     this.setTarget(TARGET_KEYS_SELECTED, element)
   }
 }
-
-export const targetManager = new TargetManager()

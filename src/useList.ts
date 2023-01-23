@@ -5,8 +5,7 @@ import {
   TARGET_KEYS_SELECTED,
   DIALOG_STATUS_SHOW,
 } from './constants'
-import { dialogManager } from './dialogManager'
-import { targetManager } from './targetManager'
+import { dialogManager, targetManager } from './main'
 import { MaybeHTMLElement } from './types'
 
 function getSiblingElements(target: HTMLElement) {

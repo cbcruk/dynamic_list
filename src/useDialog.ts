@@ -1,6 +1,5 @@
 import { TARGET_KEYS_SELECTED, DIALOG_STATUS_HIDDEN } from './constants'
-import { dialogManager } from './dialogManager'
-import { targetManager } from './targetManager'
+import { dialogManager, targetManager } from './main'
 
 function handleClickDim(e: MouseEvent) {
   const target = e.target as HTMLElement
