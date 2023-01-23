@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[data-list] {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+[data-list-item] {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  cursor: pointer;
+  transition: padding ease-out 0.3s;
+}
+
+[data-item] {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border: 1px solid;
+  pointer-events: none;
+}
