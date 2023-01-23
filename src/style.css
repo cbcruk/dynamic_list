@@ -31,3 +31,11 @@
   border: 1px solid;
   pointer-events: none;
 }
+
+[data-is-hover='true'] [data-item] {
+  transform: translateX(40px);
+}
+
+[data-is-siblings='true'] [data-item] {
+  transform: translateX(20px);
+}
