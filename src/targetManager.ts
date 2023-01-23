@@ -4,6 +4,7 @@ import {
   TARGET_KEYS_NEXT,
   TARGET_DATASET_IS_SIBLINGS,
   TARGET_DATASET_IS_HOVER,
+  TARGET_KEYS_SELECTED,
 } from './constants'
 import { TargetKey, MaybeHTMLElement } from './types'
 
@@ -46,6 +47,17 @@ class TargetManager {
     }
 
     this.setTarget(TARGET_KEYS_HOVER, element)
+  }
+
+  toggleSelected = (status: boolean) => {
+    const target = this.map.get(TARGET_KEYS_SELECTED)
+    const element = status && target ? target : null
+
+    if (target) {
+      target.dataset.isSelected = `${status}`
+    }
+
+    this.setTarget(TARGET_KEYS_SELECTED, element)
   }
 }
 

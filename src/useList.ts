@@ -2,7 +2,10 @@ import {
   TARGET_KEYS_PREV,
   TARGET_KEYS_NEXT,
   TARGET_KEYS_HOVER,
+  TARGET_KEYS_SELECTED,
+  DIALOG_STATUS_SHOW,
 } from './constants'
+import { dialogManager } from './dialogManager'
 import { targetManager } from './targetManager'
 import { MaybeHTMLElement } from './types'
 
@@ -38,6 +41,19 @@ function handleMouseOver(e: MouseEvent) {
   targetManager.toggleHover(true)
 }
 
+function handleClick(e: MouseEvent) {
+  const target = e.target as HTMLElement
+  const isItem = target.dataset.isHover
+
+  if (isItem) {
+    targetManager.setTarget(TARGET_KEYS_SELECTED, target)
+    targetManager.toggleSelected(true)
+
+    dialogManager.toggleModal(DIALOG_STATUS_SHOW)
+  }
+}
+
 export function useList() {
   document.body.addEventListener('mouseover', handleMouseOver)
+  document.body.addEventListener('click', handleClick)
 }

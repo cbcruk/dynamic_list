@@ -1,6 +1,8 @@
+import './style.css'
 import { render } from './render'
 import { useList } from './useList'
-import './style.css'
+import { useDialog } from './useDialog'
 
 render()
 useList()
+useDialog()

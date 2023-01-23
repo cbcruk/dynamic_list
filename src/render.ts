@@ -13,6 +13,5 @@ export function render(length = 100) {
     })
     .join('\n')
 
-  appElem.innerHTML = `<div data-list>${items}</div>
-    <div data-dialog data-status="hidden" />`
+  appElem.innerHTML = `<div data-list>${items}</div>`
 }
