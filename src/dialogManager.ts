@@ -1,7 +1,7 @@
-import { DialogStatus, MaybeHTMLElement } from './types'
+import { DialogStatus } from './types'
 
 export class DialogManager {
-  dialog: MaybeHTMLElement = document.querySelector('[data-dialog]')
+  dialog = document.querySelector<HTMLElement>('[data-dialog]')
 
   toggleModal = (status: DialogStatus, _content?: string) => {
     if (!this.dialog) {
