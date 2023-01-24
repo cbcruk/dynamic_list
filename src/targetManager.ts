@@ -32,10 +32,10 @@ export class TargetManager {
       const element = status && target ? target : null
 
       if (target) {
-        this.setTarget(key, element)
-
         target.dataset[TARGET_DATASET_IS_SIBLINGS] = `${status}`
       }
+
+      this.setTarget(key, element)
     })
   }
 
